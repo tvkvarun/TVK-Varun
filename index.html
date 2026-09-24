@@ -141,7 +141,6 @@ header{flex-wrap:nowrap;gap:.6rem 1rem}
 </svg></div>
       <div class="fdetail" id="fdetail">
         <div class="fcard"><div class="fcard-in" id="fpanels" aria-live="polite"></div></div>
-        <div class="fthumbs" id="fthumbs"></div>
       </div>
     </div>
   </div>
@@ -188,19 +187,18 @@ const media=p=>{const m=document.createElement("div");m.className="fmedia";
   else m.appendChild(emblem(p.k));
   return m;};
 const detail=document.getElementById("fdetail");
-const panelsEl=document.getElementById("fpanels"),thumbsEl=document.getElementById("fthumbs");
+const panelsEl=document.getElementById("fpanels");
 const dotsEl=document.createElement("div");dotsEl.className="dots";w.appendChild(dotsEl);
-const panels=[],thumbs=[],dots=[];
+const panels=[],dots=[];
 let hideT;
 function show(n){clearTimeout(hideT);detail.classList.add("show");
-  [panels,thumbs,dots].forEach(list=>list.forEach((el,i)=>el.classList.toggle("on",i===n)));}
+  [panels,dots].forEach(list=>list.forEach((el,i)=>el.classList.toggle("on",i===n)));}
 function hide(){clearTimeout(hideT);hideT=setTimeout(()=>{detail.classList.remove("show");dots.forEach(d=>d.classList.remove("on"));},160);}
 parts.forEach((p,i)=>{
   const pn=document.createElement("article");pn.className="fpanel";
   const tx=document.createElement("div");
   tx.innerHTML="<h3></h3><p></p>";tx.firstChild.textContent=p.t;tx.lastChild.textContent=p.d;
   pn.append(media(p),tx);panelsEl.appendChild(pn);panels.push(pn);
-  const th=document.createElement("div");th.className="fthumb";th.appendChild(media(p));thumbsEl.appendChild(th);thumbs.push(th);
   const d=document.createElement("button");d.type="button";d.className="dot-btn";d.setAttribute("aria-label",p.t);
   d.style.left=(p.x*100)+"%";d.style.top=(p.y*100)+"%";dotsEl.appendChild(d);dots.push(d);
   d.addEventListener("pointerenter",()=>show(i));
