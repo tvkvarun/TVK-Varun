@@ -240,7 +240,7 @@ w.addEventListener("keydown",e=>{if(e.target===w&&(e.key==="Enter"||e.key===" ")
 <script>
 (function(){
   var a=document.getElementById("bgm"),b=document.getElementById("music");
-  var LEVEL=0.2,userPaused=false,fade;
+  var LEVEL=0.1,userPaused=false,fade;
   a.volume=0;
   function ui(){var on=!a.paused;b.classList.toggle("muted",!on);b.setAttribute("aria-pressed",on);b.setAttribute("aria-label",on?"Mute background music":"Play background music");}
   function ramp(to,ms,done){clearInterval(fade);var from=a.volume,t0=Date.now();
