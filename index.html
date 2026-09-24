@@ -123,6 +123,13 @@ header{flex-wrap:nowrap;gap:.6rem 1rem}
 .fthumb .fmedia{width:100%;height:100%;aspect-ratio:auto;border-radius:6px}
 .fthumb.on{border-color:var(--red);transform:translateY(-2px)}
 @media (prefers-reduced-motion:reduce){.fdetail,.fdetail.show,.fpanel,.dot-btn,.dot-btn::before,.fthumb,.dots{transition:none}}
+.music{position:fixed;right:max(1rem,env(safe-area-inset-right,0px));bottom:calc(1rem + env(safe-area-inset-bottom,0px));z-index:10;width:3rem;height:3rem;border:0;border-radius:50%;background:var(--gold);color:#2A0A0A;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.35);transition:transform .2s}
+.music:hover{transform:scale(1.06)}
+.music[hidden]{display:none}
+.music svg{width:1.5rem;height:1.5rem}
+.music .off{display:none}
+.music.muted .on{display:none}
+.music.muted .off{display:block}
 </style>
 </head>
 <body id="top">
@@ -224,6 +231,32 @@ let t;function arm(){clearTimeout(t);dotsEl.classList.remove("ready");t=setTimeo
 arm();
 w.addEventListener("click",arm);
 w.addEventListener("keydown",e=>{if(e.target===w&&(e.key==="Enter"||e.key===" ")){e.preventDefault();w.click();}});
+</script>
+<button type="button" class="music muted" id="music" aria-label="Play background music" aria-pressed="false" hidden>
+<svg class="on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg>
+<svg class="off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor"/><path d="M16 9l5 6M21 9l-5 6"/></svg>
+</button>
+<audio id="bgm" src="bg.mp3" loop preload="auto"></audio>
+<script>
+(function(){
+  var a=document.getElementById("bgm"),b=document.getElementById("music");
+  var LEVEL=0.2,userPaused=false,fade;
+  a.volume=0;
+  function ui(){var on=!a.paused;b.classList.toggle("muted",!on);b.setAttribute("aria-pressed",on);b.setAttribute("aria-label",on?"Mute background music":"Play background music");}
+  function ramp(to,ms,done){clearInterval(fade);var from=a.volume,t0=Date.now();
+    fade=setInterval(function(){var k=Math.min(1,(Date.now()-t0)/ms);a.volume=from+(to-from)*k;if(k===1){clearInterval(fade);if(done)done();}},50);}
+  function start(){if(userPaused||!a.paused)return;var p=a.play();
+    if(p&&p.then)p.then(function(){ramp(LEVEL,2500);ui();unbind();}).catch(function(){});}
+  function unbind(){["pointerdown","keydown","touchstart"].forEach(function(e){document.removeEventListener(e,start);});}
+  ["pointerdown","keydown","touchstart"].forEach(function(e){document.addEventListener(e,start,{passive:true});});
+  a.addEventListener("canplay",function(){b.hidden=false;start();},{once:true});
+  a.addEventListener("error",function(){b.hidden=true;});
+  a.addEventListener("play",ui);a.addEventListener("pause",ui);
+  b.addEventListener("click",function(e){e.stopPropagation();
+    if(a.paused){userPaused=false;a.play().then(function(){ramp(LEVEL,1500);});}
+    else{userPaused=true;ramp(0,800,function(){a.pause();});}
+  });
+})();
 </script>
 </body>
 </html>
