@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About – TVK Varun</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Newsreader:opsz,wght@6..72,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#9E0000; --gold:#FFCC00; --on-red:#FFF4D6; --on-gold:#2A0A0A;
+  --head:"Bricolage Grotesque","Helvetica Neue",Arial,sans-serif;
+  --body:"Newsreader",Georgia,"Times New Roman",serif;
+  box-sizing:border-box;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--red:#6E0000;--gold:#E0B400}
+}
+:root[data-theme="dark"]{--red:#6E0000;--gold:#E0B400}
+*{box-sizing:border-box}
+html,body{min-height:100%;margin:0}
+body{background:var(--red);color:var(--on-red);font-family:var(--body);font-size:1.2rem;line-height:1.6;display:flex;flex-direction:column;min-height:100vh;padding-top:env(safe-area-inset-top,0px)}
+:focus-visible{outline:3px solid var(--on-gold);outline-offset:3px}
+header,footer{padding:1.25rem}
+header{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{font-family:var(--head);font-weight:800;font-size:clamp(1.4rem,4vw,1.9rem)}
+.menu a{color:inherit;text-decoration:none;font-family:var(--head);font-weight:600;font-size:.95rem;padding:.3rem .8rem;border-radius:999px}
+.menu a:hover,.menu a:focus-visible{background:var(--gold);color:#2A0A0A}
+main{flex:1;background:var(--gold);color:var(--on-gold);padding:3rem 1.25rem}
+.inner{max-width:1040px;margin:0 auto}
+h1{font-family:var(--head);font-weight:800;font-size:clamp(2.4rem,9vw,4rem);line-height:1;letter-spacing:-.03em;margin:0 0 1.5rem}
+p{max-width:60ch;margin:0 0 1.75rem}
+.btn{display:inline-block;font-family:var(--head);font-weight:700;padding:.9rem 1.5rem;border-radius:6px;text-decoration:none;background:var(--red);color:var(--on-red)}
+.btn:hover{filter:brightness(1.15)}
+footer{text-align:center;font-size:.95rem;padding-bottom:calc(1.25rem + env(safe-area-inset-bottom,0px))}
+.social{display:flex;justify-content:center;gap:.9rem;margin-bottom:.9rem}
+.social a{display:inline-flex;align-items:center;justify-content:center;width:2.7rem;height:2.7rem;border-radius:50%;background:var(--gold);color:#2A0A0A;transition:transform .15s}
+.social a:hover{transform:translateY(-2px)}
+.social svg{width:1.3rem;height:1.3rem}
+</style>
+</head>
+<body>
+<header>
+  <span class="brand">TVK Varun</span>
+  <nav class="menu" aria-label="Main"><a href="https://claude.ai/artifact/KRVoAZbfy942ZyGbv8Ak2n" target="_blank" rel="noopener">Home</a></nav>
+</header>
+<main>
+  <div class="inner">
+    <h1>About</h1>
+    <p>TVK Varun is a public servant working for the people of this community. Full details coming soon.</p>
+    <a class="btn" href="https://claude.ai/artifact/KRVoAZbfy942ZyGbv8Ak2n" target="_blank" rel="noopener">Back to home</a>
+  </div>
+</main>
+<footer><nav class="social" aria-label="Social media"><a href="https://www.instagram.com/tvk.varun/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/14pjnQJVSDz/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.3h-3.2V7.6c0-1 .4-1.6 1.7-1.6h1.6V3.1C16.8 3 15.9 3 14.9 3c-2.6 0-4.2 1.6-4.2 4.4v2.3H8v3.3h2.7v8z"/></svg></a><a href="https://x.com/TVK_Varun" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></nav>© 2026 TVK Varun</footer>
+</body>
+</html>
