@@ -48,18 +48,18 @@ footer{text-align:center;font-size:.95rem;padding-bottom:calc(1.25rem + env(safe
 .flag{border-radius:4px;box-shadow:0 10px 30px rgba(42,10,10,.35);width:100%;height:auto;aspect-ratio:3/2;display:block;overflow:hidden;cursor:pointer}
 .flag *{transform-box:view-box}
 .s1,.s3{animation:inL 1s cubic-bezier(.7,0,.2,1) backwards}
-.s2{animation:inR 1s cubic-bezier(.7,0,.2,1) .55s backwards}
+.s2{animation:inR 1s cubic-bezier(.7,0,.2,1) backwards}
 @keyframes inL{from{transform:translateX(-1080px)}}
 @keyframes inR{from{transform:translateX(1080px)}}
-.el-l{animation:eleL 1.2s cubic-bezier(.2,.8,.2,1) 1.8s backwards}
-.el-r{animation:eleR 1.2s cubic-bezier(.2,.8,.2,1) 1.8s backwards}
+.el-l{animation:eleL .9s cubic-bezier(.2,.8,.2,1) 1.3s backwards}
+.el-r{animation:eleR .9s cubic-bezier(.2,.8,.2,1) 1.3s backwards}
 @keyframes eleL{from{transform:translateX(-520px)}}
 @keyframes eleR{from{transform:translateX(520px)}}
-.emb{transform-origin:540.5px 359.5px;animation:embIn .9s ease-out 2.6s backwards}
+.emb{transform-origin:540.5px 359.5px;animation:embIn .7s ease-out 1.9s backwards}
 @keyframes embIn{from{opacity:0;transform:scale(.5) rotate(-90deg)}}
-.stars{transform-origin:540.5px 359.5px;animation:spin 28s linear 2.8s infinite}
+.stars{transform-origin:540.5px 359.5px;animation:spin 28s linear 2.1s infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-.fl{transform-origin:540px 451px;animation:bloom 1.4s cubic-bezier(.2,.9,.3,1.2) 3.2s backwards,sway 6s ease-in-out 4.6s infinite}
+.fl{transform-origin:540px 451px;animation:bloom 1.25s cubic-bezier(.2,.9,.3,1.2) 2.6s backwards,sway 6s ease-in-out 3.85s infinite}
 @keyframes bloom{from{opacity:0;transform:scale(.2) rotate(-25deg)}}
 @keyframes sway{25%{transform:rotate(2.5deg)}75%{transform:rotate(-2.5deg)}}
 @media (prefers-reduced-motion:reduce){.flag *{animation:none!important}}
@@ -144,7 +144,6 @@ main{position:relative;padding-top:4rem}
   <div class="inner">
     <div>
       <h1><span class="dot" aria-hidden="true"></span><span data-i="soon">Coming soon.</span></h1>
-      <a class="btn" id="notify" data-i="notify" href="mailto:hello@example.com?subject=Notify%20me%20about%20the%20launch">Notify me</a>
     </div>
     <div class="flagcol"><div id="flagwrap" data-i-title="replay" title="Tap the flag to replay" tabindex="0"><svg class="flag" viewBox="0 0 1080 720" role="img" data-i-aria-label="flagaria" aria-label="Party flag: crimson and gold stripes with two elephants and a flower emblem" xmlns="http://www.w3.org/2000/svg">
 <rect class="s1" width="1080" height="243" fill="#A00000"/>
@@ -162,7 +161,7 @@ main{position:relative;padding-top:4rem}
     </div>
   </div>
 </main>
-<footer><nav class="social" data-i-aria-label="social" aria-label="Social media"><a href="https://www.instagram.com/tvk.varun/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/14pjnQJVSDz/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.3h-3.2V7.6c0-1 .4-1.6 1.7-1.6h1.6V3.1C16.8 3 15.9 3 14.9 3c-2.6 0-4.2 1.6-4.2 4.4v2.3H8v3.3h2.7v8z"/></svg></a><a href="https://x.com/TVK_Varun" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a></nav><span data-i="copy">© 2026 TVK Varun</span></footer>
+<footer><nav class="social" data-i-aria-label="social" aria-label="Social media"><a href="https://www.instagram.com/tvk.varun/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a><a href="https://www.facebook.com/share/14pjnQJVSDz/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M13.5 21v-8h2.7l.5-3.3h-3.2V7.6c0-1 .4-1.6 1.7-1.6h1.6V3.1C16.8 3 15.9 3 14.9 3c-2.6 0-4.2 1.6-4.2 4.4v2.3H8v3.3h2.7v8z"/></svg></a><a href="https://x.com/TVK_Varun" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="mailto:infotvkvarun@gmail.com" aria-label="Mail"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></a></nav><span data-i="copy">© 2026 TVK Varun</span></footer>
 <script>
 window.L={
 en:{title:"TVK Varun – Coming Soon",brand:"TVK Varun",soon:"Coming soon.",notify:"Notify me",mail:"Notify me about the launch",
@@ -259,7 +258,7 @@ parts.forEach((p,i)=>{
 });
 document.addEventListener("pointerdown",e=>{if(!e.target.closest(".dot-btn"))hide();});
 const still=matchMedia("(prefers-reduced-motion:reduce)").matches;
-let t;function arm(){clearTimeout(t);dotsEl.classList.remove("ready");t=setTimeout(()=>dotsEl.classList.add("ready"),still?0:4300);}
+let t;function arm(){clearTimeout(t);dotsEl.classList.remove("ready");t=setTimeout(()=>dotsEl.classList.add("ready"),still?0:3300);}
 arm();
 w.addEventListener("click",arm);
 w.addEventListener("keydown",e=>{if(e.target===w&&(e.key==="Enter"||e.key===" ")){e.preventDefault();w.click();}});
@@ -300,7 +299,6 @@ w.addEventListener("keydown",e=>{if(e.target===w&&(e.key==="Enter"||e.key===" ")
     document.querySelectorAll("[data-i-alt]").forEach(function(e){e.setAttribute("alt",d[e.getAttribute("data-i-alt")]);});
     document.querySelectorAll("[data-i-title]").forEach(function(e){e.setAttribute("title",d[e.getAttribute("data-i-title")]);});
     document.querySelectorAll("[data-i-aria-label]").forEach(function(e){e.setAttribute("aria-label",d[e.getAttribute("data-i-aria-label")]);});
-    document.getElementById("notify").href="mailto:hello@example.com?subject="+encodeURIComponent(d.mail);
     panels.forEach(function(pn,i){pn.querySelector("h3").textContent=d.parts[i][0];pn.querySelector("p").textContent=d.parts[i][1];dots[i].setAttribute("aria-label",d.parts[i][0]);});
     btn.textContent=d.switchTo;btn.setAttribute("aria-label",d.switchLabel);btn.lang=lang==="en"?"ta":"en";
     var m=document.getElementById("music");m.setAttribute("aria-label",m.classList.contains("muted")?d.musicOff:d.musicOn);
